@@ -17,104 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--cobalt:#0e3b47;--ink:#0a2a33;--yellow:#d9372b;--pink:#f4a38f;--mint:#7fd1c2;--paper:#fbf7ef;--fg:#0a2a33;--card:#f2e8d5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root{--paper:#0a2a33;--fg:#f2e8d5;--card:#12414f;color-scheme:dark}}
-html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--fg);font:400 17px/1.6 "DM Sans",system-ui,sans-serif}
-h1,h2,h3{font-family:"Unbounded","DM Sans",sans-serif;margin:0;line-height:1.1;letter-spacing:-.03em}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
-.hero{background:var(--cobalt);color:#fff;border-radius:0 0 40px 40px;overflow:hidden}
-header{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
-.logo{font:800 22px "Unbounded",sans-serif;text-decoration:none;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}
-.logo b{color:#ff6b5b}
-nav{display:flex;gap:24px;font-weight:500}
-nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1}
-.btn{display:inline-block;padding:15px 26px;border-radius:99px;font:700 17px "DM Sans",sans-serif;text-decoration:none;background:var(--yellow);color:#fff;border:0;cursor:pointer;transition:transform .15s}
-.btn:hover{transform:translateY(-3px)}
-.btn.alt{background:transparent;color:inherit;border:2px solid currentColor}
-.btn:disabled{opacity:.6;cursor:wait}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.hero-in{display:grid;grid-template-columns:1.15fr .85fr;gap:24px;align-items:center;padding:40px 0 70px}
-.hero h1{font-size:clamp(34px,5.4vw,68px);font-weight:800}
-.hero p{font-size:20px;max-width:44ch;margin:24px 0 12px;opacity:.92}
-.hero .loc{font-size:16px;margin:0 0 32px;opacity:.8}
-.hero canvas{width:100%;aspect-ratio:1;display:block}
-.band{background:var(--yellow);color:#fff;overflow:hidden;white-space:nowrap;margin-top:-20px;padding:34px 0 14px;position:relative;z-index:1}
-.track{display:inline-flex;gap:40px;animation:mq 30s linear infinite;font:700 22px "Unbounded",sans-serif}
-.track span::after{content:"✦";margin-left:40px;color:var(--cobalt)}
-@keyframes mq{to{transform:translateX(-50%)}}
-section{padding:84px 0}
-h2{font-size:clamp(28px,4vw,48px);font-weight:800;max-width:22ch}
-.lead{max-width:54ch;margin:16px 0 0;opacity:.8}
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;gap:16px;margin-top:44px}
-.tile{border-radius:26px;padding:20px 22px 26px;color:var(--ink);transition:transform .2s}
-.tile:hover{transform:translateY(-6px)}
-.w2{grid-column:span 2}.w4{grid-column:span 4}
-.tile h3{font-size:21px;margin:14px 0 8px}
-.tile p{margin:0;font-size:16px;line-height:1.5}
-.tile svg{display:block;width:100%;height:150px}
-.t1{background:#f2e8d5}.t2{background:#f4a38f}.t3{background:#9fd3cb}.t4{background:#efc98d}.t5{background:#c9e3dd}.t6{background:#e8b4a8}.t7{background:#fff;border:2px solid var(--ink)}.t8{background:#f7e0b5}.t9{background:var(--yellow);color:#fff}.t9 .a{stroke:#f2e8d5}.t9 .f{fill:#f2e8d5}
-.s{fill:none;stroke:#0a2a33;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
-.a{stroke:#c4281f}.f{fill:#c4281f;stroke:none}.ft{fill:#c4281f;fill-opacity:.25;stroke:none}
-.draw{stroke-dasharray:300;animation:dr 4s ease-in-out infinite}
-@keyframes dr{0%{stroke-dashoffset:300}45%,85%{stroke-dashoffset:0}100%{stroke-dashoffset:-300}}
-.flow{stroke-dasharray:6 8;animation:fl 1s linear infinite}
-@keyframes fl{to{stroke-dashoffset:-14}}
-.bar,.vr{transform-box:fill-box;transform-origin:bottom;animation:bh 2.6s ease-in-out infinite alternate}
-@keyframes bh{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
-.blink{animation:bl 1.6s steps(1) infinite}
-@keyframes bl{50%{opacity:.15}}
-.sweep{animation:sw 3s steps(4) infinite}
-@keyframes sw{to{transform:translateY(72px)}}
-.arc{animation:ar 2s ease-in-out infinite;opacity:0}
-@keyframes ar{40%{opacity:1}}
-.works{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:44px}
-.work{background:var(--card);border-radius:26px;overflow:hidden;display:flex;flex-direction:column}
-.work img,.work iframe,.work video{width:100%;aspect-ratio:16/10;object-fit:cover;border:0;display:block}
-.work div{padding:20px 22px 24px}
-.work h3{font-size:20px;margin:6px 0 8px}
-.work p{margin:0 0 14px;font-size:16px;opacity:.85}
-.chip{display:inline-block;background:var(--yellow);color:#fff;font-size:13px;font-weight:700;padding:3px 12px;border-radius:99px}
-.empty{grid-column:1/-1;background:var(--card);border-radius:26px;padding:32px;text-align:center}
-.dark{background:var(--ink);color:#fff;border-radius:40px;margin:0 12px}
-.panel{margin-top:40px;background:#12414f;border-radius:26px;padding:26px}
-.top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;opacity:.8;font-size:14px}
-.live{display:inline-flex;align-items:center;gap:8px}
-.live i{width:10px;height:10px;border-radius:50%;background:var(--mint);animation:bl 1.6s steps(1) infinite}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}
-.kpi{background:#0a2a33;border-radius:18px;padding:16px 18px}
-.kpi small{opacity:.7}
-.kpi strong{display:block;font:800 36px "Unbounded",sans-serif}
-.task{display:grid;grid-template-columns:160px 1fr 48px;gap:14px;align-items:center;padding:8px 0}
-.meter{height:14px;background:#0a2a33;border-radius:99px;overflow:hidden}
-.meter span{display:block;height:100%;border-radius:99px;transition:width .8s}
-.note{font-size:13px;opacity:.65;margin:14px 0 0}
-.contact{background:#f2e8d5;color:var(--ink);border-radius:40px;margin:84px 12px 12px;padding:72px 0}
-.contact h2{max-width:20ch}
-.contact .btn{background:var(--ink);color:#fff}
-.contact .btn.alt{background:transparent;color:var(--ink)}
-.form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;max-width:760px}
-.full{grid-column:1/-1}
-.form label{display:block;font-weight:700;font-size:14px;margin-bottom:6px}
-.form input,.form select,.form textarea{width:100%;font:inherit;padding:14px 16px;border:2px solid var(--ink);border-radius:14px;background:#fff;color:var(--ink)}
-.form textarea{min-height:130px;resize:vertical}
-.msg{margin:14px 0 0;font-weight:700}
-.msg a{color:inherit}
-.reach{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
-footer{padding:26px 0 40px;font-size:14px;opacity:.75}
-footer p{margin:0}
-dialog{border:0;border-radius:26px;padding:26px;width:calc(100% - 32px);max-width:640px;background:var(--paper);color:var(--fg)}
-dialog::backdrop{background:rgba(12,15,46,.85)}
-dialog .form{max-width:none;margin-top:16px}
-dialog .btn.alt{color:var(--fg)}
-@media (max-width:900px){.bento{grid-template-columns:repeat(2,1fr)}.w4{grid-column:span 2}.hero-in{grid-template-columns:1fr}.hero canvas{max-width:380px;margin:0 auto}.works{grid-template-columns:1fr}}
-@media (max-width:560px){.bento{grid-template-columns:1fr}.w2,.w4{grid-column:auto}nav{display:none}.kpis{grid-template-columns:1fr}.task{grid-template-columns:100px 1fr 42px}.dark,.contact{margin-left:0;margin-right:0;border-radius:28px}.form{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track,.draw,.flow,.bar,.vr,.blink,.sweep,.arc,.live i{animation:none;opacity:1;stroke-dashoffset:0}.tile,.btn{transition:none}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -129,7 +32,7 @@ dialog .btn.alt{color:var(--fg)}
         <a href="#work">Services</a>
         <a href="#my-works">My Works</a>
         <a href="#dashboard">Dashboards</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">About and contact</a>
       </nav>
     </header>
     <main id="top" class="hero-in">
@@ -138,7 +41,7 @@ dialog .btn.alt{color:var(--fg)}
         <p>3D models, CAD drawings, garage doors, custom circuit boards, and automation for your files, factory, and home.</p>
         <p class="loc">Based in Coimbatore, Tamil Nadu.</p>
         <div class="cta">
-          <a class="btn" href="#contact">Send your project details</a>
+          <a class="btn" href="contact.html">Send your project details</a>
           <a class="btn alt" href="#my-works">See my works</a>
         </div>
       </div>
@@ -148,6 +51,14 @@ dialog .btn.alt{color:var(--fg)}
 </div>
 
 <div class="band" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<div class="proof">
+  <div><strong>Coimbatore, Tamil Nadu</strong><span>Local, reachable by call or WhatsApp</span></div>
+  <div><strong>Design software</strong><span>AutoCAD, SolidWorks, Creo, CATIA</span></div>
+  <div><strong>Drawing to installation</strong><span>Design, door production, fitting and automation</span></div>
+  <div data-opt="years" hidden><strong data-site="years"></strong><span>of hands-on experience</span></div>
+  <div data-opt="gst" hidden><strong>GST registered</strong><span>GSTIN <span data-site="gst"></span></span></div>
+</div>
 
 <section id="work">
   <div class="wrap">
@@ -190,38 +101,17 @@ dialog .btn.alt{color:var(--fg)}
   </div>
 </div></section>
 
-<div class="contact" id="contact">
-  <div class="wrap">
-    <h2>Tell us what you want to build or automate</h2>
-    <form class="form" id="lead">
-      <div><label for="fn">Your name</label><input id="fn" required maxlength="80" autocomplete="name"></div>
-      <div><label for="fp">Your phone number</label><input id="fp" type="tel" required maxlength="20" autocomplete="tel" placeholder="+91 98765 43210"></div>
-      <div class="full">
-        <label for="fw">Work you need</label>
-        <select id="fw">
-          <option>Garage or sectional doors</option>
-          <option>3D modeling</option>
-          <option>Design</option>
-          <option>CAD automation</option>
-          <option>Excel automation</option>
-          <option>Real-time workflow dashboard</option>
-          <option>Electronic automation</option>
-          <option>Circuit board customisation</option>
-          <option>Home automation</option>
-          <option>Something else</option>
-        </select>
-      </div>
-      <div class="full"><label for="fd">Details of your work</label><textarea id="fd" required maxlength="1500"></textarea></div>
-      <div class="full"><button class="btn" id="fbtn" type="submit">Send details</button><p class="msg" id="fm" role="status"></p></div>
-    </form>
-    <div class="reach">
-      <a class="btn alt" id="waLink" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a>
-      <a class="btn alt" id="telLink" href="#">Call now</a>
-    </div>
-  </div>
-</div>
+<div class="contact" id="contact"><div class="wrap">
+  <h2>Have a project in mind?</h2>
+  <p class="lead">Send your details and we will call you back, or message us on WhatsApp.</p>
+  <div class="reach"><a class="btn" href="contact.html">Send your project details</a><a class="btn alt" id="waLink" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="btn alt" id="telLink" href="#">Call now</a></div>
+</div></div>
 
-<div class="wrap"><footer><p>© 2026 MalieakkaL, Coimbatore. 3D modeling, design, garage doors, electronics, home automation and workflow automation.</p></footer></div>
+<div class="wrap"><footer>
+  <p>© 2026 MalieakkaL, Coimbatore. 3D modeling, design, garage doors, electronics, home automation and workflow automation.</p>
+  <p data-opt="gst" hidden>GSTIN: <span data-site="gst"></span></p>
+  <p><a href="index.html">Home</a><a href="contact.html">About and contact</a></p>
+</footer></div>
 
 <!-- Work publishing helper. Open the site with #owner at the end of the address. -->
 <dialog id="ownerDialog">
@@ -239,11 +129,10 @@ dialog .btn.alt{color:var(--fg)}
   </form>
 </dialog>
 
+<script src="config.js"></script>
 <script>
 (function(){
-  /* ===== SETTINGS: edit these ===== */
-  var WA='916360037765';                 // WhatsApp number with country code, no + sign
-  var FORM_KEY='PASTE_YOUR_WEB3FORMS_KEY_HERE'; // free key from web3forms.com, emailed enquiries come to you
+  var WA=SITE.wa;
 
   /* Projects everyone sees. Add one entry per project, separated by commas. Example:
      {title:'Sectional door, Peelamedu',category:'Garage and sectional doors',type:'photo',mediaUrl:'images/door1.jpg',description:'3 panel insulated door with remote.'}  */
@@ -258,9 +147,6 @@ dialog .btn.alt{color:var(--fg)}
   var h=names.map(function(n){return '<span>'+n+'</span>'}).join('');
   document.getElementById('track').innerHTML=h+h;
 
-  /* Contact buttons */
-  document.getElementById('waLink').href=waLink('Hello MalieakkaL, I found your website and need help with a project.');
-  document.getElementById('telLink').href='tel:+'+WA;
 
   /* Hero 3D wireframe */
   var c=document.getElementById('cv'),x=c.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,a=.6,w=0,H=0;
@@ -279,23 +165,6 @@ dialog .btn.alt{color:var(--fg)}
     document.getElementById('k1').textContent=24+Math.floor(Math.random()*9);
     document.getElementById('k2').textContent=8+Math.floor(Math.random()*7);
     document.getElementById('k3').textContent=(64+Math.floor(Math.random()*10))+'%'},2500);
-
-  /* Contact form: sends the enquiry to your email. WhatsApp opens only if the visitor taps the link. */
-  var form=document.getElementById('lead'),fm=document.getElementById('fm'),fbtn=document.getElementById('fbtn');
-  function setMsg(html){fm.innerHTML=html}
-  form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var d={name:document.getElementById('fn').value.trim(),phone:document.getElementById('fp').value.trim(),work:document.getElementById('fw').value,message:document.getElementById('fd').value.trim()};
-    var wa='<a href="'+waLink('New enquiry from website\nName: '+d.name+'\nPhone: '+d.phone+'\nWork: '+d.work+'\nDetails: '+d.message)+'" target="_blank" rel="noopener">Send the same details on WhatsApp</a>';
-    if(FORM_KEY.indexOf('PASTE')===0){setMsg('The form is not connected yet. '+wa);return}
-    fbtn.disabled=true;setMsg('Sending…');
-    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
-      body:JSON.stringify({access_key:FORM_KEY,subject:'New enquiry: '+d.work,from_name:'MalieakkaL website',name:d.name,phone:d.phone,work:d.work,message:d.message})})
-    .then(function(r){return r.json()})
-    .then(function(j){if(!j.success)throw 0;form.reset();setMsg('Thank you. We received your details and will call you soon. '+wa)})
-    .catch(function(){setMsg('Could not send. Please check your internet and try again, or '+wa.charAt(0).toLowerCase()+wa.slice(1))})
-    .then(function(){fbtn.disabled=false});
-  });
 
   /* My Works */
   function mediaHtml(wk){
