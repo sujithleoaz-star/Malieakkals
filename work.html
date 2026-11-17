@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our work – MalieakkaL, Coimbatore</title>
+<meta name="description" id="metaDesc" content="Details of the work MalieakkaL does in Coimbatore: garage doors, CAD automation, 3D modeling, PCB design and home automation.">
+<meta name="google-site-verification" content="Gx9kDPkbwmGEOO09r68AdZyTrQlBM0hEMZXg3j6mVR8">
+<meta name="google-site-verification" content="LACcJ0WHETKfT06arlZ_3rjmIiLu45AFtXMlJPvbK3E">
+<meta name="theme-color" content="#0e3b47">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-48.png" sizes="48x48" type="image/png">
+<link rel="apple-touch-icon" href="favicon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="hero"><div class="wrap">
+<header>
+      <a class="logo" href="index.html">
+        <img src="logo.svg" width="44" height="44" alt="">
+        Malieakka<b>L</b>
+      </a>
+      <nav>
+        <a href="index.html#work">Services</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#dashboard">Dashboards</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+<main class="page-in" id="top">
+  <span class="chip" id="wkChip">Our work</span>
+  <h1 id="wkTitle" style="margin-top:12px">Our work</h1>
+  <p id="wkShort"></p>
+  <div class="cta"><a class="btn" id="wkAsk" href="#" target="_blank" rel="noopener">Ask about this work</a><a class="btn alt" id="wkForm" href="index.html#contact">Send project details</a></div>
+</main>
+</div></div>
+
+<section id="wkAbout"><div class="wrap"><h2>About this work</h2><p class="lead" id="wkDesc"></p></div></section>
+<section id="wkCan" style="padding-top:0"><div class="wrap"><h2>What we can do for you</h2><div class="about" id="wkList"></div></div></section>
+<section id="wkMedia" style="padding-top:0"><div class="wrap"><h2>Photos and videos</h2><div class="works" id="wkGallery"></div></div></section>
+<section id="wkOther" style="padding-top:0"><div class="wrap"><h2 id="wkOtherH">More of our work</h2><div class="reach" id="wkMore"></div></div></section>
+
+<div class="contact" id="contact"><div class="wrap">
+  <h2>Want this work done?</h2>
+  <p class="lead">Send your details and we will call you back, or message us on WhatsApp.</p>
+  <div class="reach"><a class="btn" id="wkForm2" href="index.html#contact">Send project details</a><a class="btn alt" id="waLink" href="#" target="_blank" rel="noopener">Chat on WhatsApp</a><a class="btn alt" id="telLink" href="#">Call now</a></div>
+</div></div>
+
+<div class="wrap"><footer>
+  <p>© 2026 MalieakkaL, Coimbatore. 3D modeling, design, garage doors, electronics, home automation and workflow automation.</p>
+  <p data-opt="gst" hidden>GSTIN: <span data-site="gst"></span></p>
+  <p><a href="index.html">Home</a><a href="index.html#contact">Contact</a></p>
+</footer></div>
+
+<!-- Media code helper: add #owner to the end of the page address -->
+<dialog id="ownerDialog">
+  <h3>Add a photo or video</h3>
+  <p class="note" style="opacity:.8">Fill this in, copy the code, and paste it inside the media list of this work in works-data.js. After you commit on GitHub, everyone sees it.</p>
+  <form class="form" id="wf">
+    <div><label for="wm">Type</label><select id="wm"><option value="photo">Photo</option><option value="video">Video (YouTube link or mp4 file)</option></select></div>
+    <div><label for="wu">File or link</label><input id="wu" required placeholder="images/door1.jpg"></div>
+    <div class="full"><label for="wcap">Caption (optional)</label><input id="wcap"></div>
+    <div class="full"><button class="btn" type="submit">Make code</button></div>
+    <div class="full"><textarea id="wo" readonly placeholder="Your code appears here"></textarea></div>
+    <div class="full"><button class="btn alt" type="button" id="wcopy">Copy code</button> <button class="btn alt" type="button" id="wclose">Close</button></div>
+  </form>
+</dialog>
+
+<script src="config.js"></script>
+<script src="works-data.js"></script>
+<script>
+(function(){
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;')}
+  function waLink(t){return 'https://wa.me/'+SITE.wa+'?text='+encodeURIComponent(t)}
+  function $(id){return document.getElementById(id)}
+  var q=new URLSearchParams(location.search).get('type'),w=null;
+  WORKS.forEach(function(x){if(x.slug===q)w=x});
+  function others(skip){$('wkMore').innerHTML=WORKS.filter(function(x){return x!==skip}).map(function(x){return '<a class="btn alt" href="work.html?type='+x.slug+'">'+esc(x.title)+'</a>'}).join('')}
+  function media(m){
+    var u=String(m.src||'');
+    if(!/^(https?:\/\/|images\/|videos\/|\.\/)/.test(u))return '';
+    var cap=m.caption||w.title;
+    if(m.type==='video'){
+      var y=u.match(/(?:v=|youtu\.be\/|embed\/|shorts\/)([\w-]{6,})/);
+      if(y)return '<iframe src="https://www.youtube.com/embed/'+esc(y[1])+'" title="'+esc(cap)+'" loading="lazy" allowfullscreen></iframe>';
+      return '<video controls preload="metadata" src="'+esc(u)+'"></video>';
+    }
+    return '<img loading="lazy" src="'+esc(u)+'" alt="'+esc(cap)+'">';
+  }
+  if(!w){
+    $('wkTitle').textContent='Choose a type of work';
+    $('wkShort').textContent='Pick one below to see the details, what we can do and our projects.';
+    ['wkChip','wkAsk','wkForm','wkAbout','wkCan','wkMedia'].forEach(function(i){$(i).hidden=true});
+    $('wkOtherH').textContent='All work';
+    others(null);
+  }else{
+    document.title=w.title+' in Coimbatore – MalieakkaL';
+    $('metaDesc').setAttribute('content',w.short+' Based in Coimbatore, Tamil Nadu.');
+    $('wkChip').textContent=w.title;
+    $('wkTitle').textContent=w.title;
+    $('wkShort').textContent=w.short;
+    $('wkDesc').textContent=w.description;
+    $('wkAsk').href=waLink('Hello MalieakkaL, I am interested in: '+w.title);
+    var f='index.html?work='+encodeURIComponent(w.form)+'#contact';
+    $('wkForm').href=f;$('wkForm2').href=f;
+    $('wkList').innerHTML=w.canDo.map(function(t){return '<div class="box"><p><strong>'+esc(t)+'</strong></p></div>'}).join('');
+    var g=$('wkGallery'),items=(w.media||[]).map(media).filter(Boolean);
+    if(!items.length){
+      g.innerHTML='<div class="empty"><h3>Photos and videos are being added</h3><p>Ask us on WhatsApp to see examples of this work.</p><a class="btn" target="_blank" rel="noopener" href="'+waLink('Hello MalieakkaL, please share examples of: '+w.title)+'">Ask on WhatsApp</a></div>';
+    }else{
+      g.innerHTML=(w.media||[]).map(function(m){var h=media(m);return h?'<article class="work">'+h+(m.caption?'<div><p>'+esc(m.caption)+'</p></div>':'')+'</article>':''}).join('');
+    }
+    others(w);
+  }
+  /* media code helper */
+  var dlg=$('ownerDialog');
+  function chk(){if(location.hash==='#owner'&&!dlg.open)dlg.showModal()}
+  chk();addEventListener('hashchange',chk);
+  $('wclose').onclick=function(){dlg.close();history.replaceState(null,'',location.pathname+location.search)};
+  $('wf').addEventListener('submit',function(e){
+    e.preventDefault();
+    var o={type:$('wm').value,src:$('wu').value.trim()},cap=$('wcap').value.trim();
+    if(cap)o.caption=cap;
+    $('wo').value=JSON.stringify(o)+',';
+  });
+  $('wcopy').onclick=function(){var t=$('wo');t.select();try{navigator.clipboard.writeText(t.value)}catch(err){document.execCommand&&document.execCommand('copy')}};
+})();
+</script>
+</body>
+</html>
